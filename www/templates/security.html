@@ -2,18 +2,23 @@
 
 
 <ion-view view-title="安全设置">
-	<ion-nav-bar class="bar-positive">
-		<ion-nav-buttons side="left">
-			<button class="button button-icon ion-ios-arrow-left" ng-click="onClickBackward()">返回</button>
-		</ion-nav-buttons>
-		<!-- <ion-nav-buttons side="right">
-			<a class="button button-icon icon ion-ios-list-outline" href="#"></a>
-		</ion-nav-buttons> -->
-	</ion-nav-bar>
+	<div class="bar bar-header bar-positive">
+		<button class="button button-icon ion-ios-arrow-left" ng-click="onClickBackward()">返回</button>
+		<h1 class="title">安全设置</h1>
+	</div>
 
-	<ion-content>
-
-		<button class="button button-outlint button-block button-positive">123</button>
+	<ion-content style="margin-top: 35px;">
+		<ul class="list">
+			<li class="item">
+				<a class="button button-outlint button-block button-positive" href="#/changepassword">修改密码</a>
+			</li>
+			<li class="item">
+				<a class="button button-outlint button-block button-positive" href="">图形密码</a>
+			</li>
+			<li class="item">
+				<a class="button button-outlint button-block button-positive" href="">指纹</a>
+			</li>
+		</ul>
 		
 	</ion-content>
 </ion-view>
