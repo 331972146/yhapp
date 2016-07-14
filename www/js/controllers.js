@@ -63,12 +63,19 @@ angular.module('yhapp.controllers', [])
   }
 })
 
-.controller('notificationCtrl', function($scope,$ionicHistory) {
-  console.log("123");
-  $scope.onClickBackward = function()
-  {
-  	$ionicHistory.goBack();
-  }
+.controller('notificationCtrl', function($scope,$ionicHistory,$ionicScrollDelegate,$ionicModal) {
+    $scope.onClickBackward = function()
+    {
+    	$ionicHistory.goBack();
+    }
+    $scope.back2top = function()
+    {
+      $ionicScrollDelegate.$getByHandle('notification').scrollTop(true);
+    }
+    $scope.filter = function()
+    {
+      
+    }
 })
 
 .controller('releasetaskCtrl', function($scope,$ionicHistory) {
@@ -126,8 +133,14 @@ angular.module('yhapp.controllers', [])
   	$ionicHistory.goBack();
   }
 })
-
 .controller('securityCtrl', function($scope,$ionicHistory) {
+  console.log("123");
+  $scope.onClickBackward = function()
+  {
+    $ionicHistory.goBack();
+  }
+})
+.controller('changepasswordCtrl', function($scope,$ionicHistory) {
   console.log("123");
   $scope.onClickBackward = function()
   {
@@ -148,5 +161,44 @@ angular.module('yhapp.controllers', [])
   $scope.onClickBackward = function()
   {
     $ionicHistory.goBack();
+  }
+  $scope.appinfo={
+    "VersionNumber":"",
+    "AppName":"",
+    "PackageName":"",
+    "VersionCode":"",
+    "Describe":"",
+    "author":"BME319",
+    "email":"***@***.com"
+  }
+  if(ionic.Platform.platform()!='win32')
+  {
+    cordova.getAppVersion.getVersionNumber().then(function (version) {
+        console.log(version);
+        $scope.appinfo.VersionNumber = version;
+    });
+    cordova.getAppVersion.getAppName().then(function (version) {
+        console.log(version);
+        $scope.appinfo.AppName = version;
+    });
+    cordova.getAppVersion.getPackageName().then(function (version) {
+        console.log(version);
+        $scope.appinfo.PackageName = version;
+    });
+    cordova.getAppVersion.getVersionCode().then(function (version) {
+        console.log(version);
+        $scope.appinfo.VersionCode = version;
+    });
+    $scope.appinfo.Describe = "引航app";
+  }else{
+    $scope.appinfo={
+      "VersionNumber":"VersionNumber",
+      "AppName":"AppName",
+      "PackageName":"PackageName",
+      "VersionCode":"VersionCode",
+      "Describe":"电脑上看你妹的关于",
+      "author":"BME319",
+      "email":"***@***.com"
+    }
   }
 })
