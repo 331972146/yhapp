@@ -2,28 +2,127 @@
 
 
 <ion-view view-title="管理员主页">
-	<ion-nav-bar class="bar-positive">
-		<ion-nav-buttons side="left">
-			<button class="button button-icon ion-ios-arrow-left" ng-click="onClickBackward()">返回</button>
-		</ion-nav-buttons>
-		<!-- <ion-nav-buttons side="right">
-			<a class="button button-icon icon ion-ios-list-outline" href="#"></a>
-		</ion-nav-buttons> -->
-	</ion-nav-bar>
 
-	<ion-content>
-
-		<a class="button button-outlint button-block button-positive" href="#/setting">设置</a>
-		<a class="button button-outlint button-block button-positive" href="#/notification">通知</a>
-		<a class="button button-outlint button-block button-positive" href="#/personalinfo">个人信息</a>
-		<a class="button button-outlint button-block button-positive" href="#/releasetask">发布任务</a>
-		<a class="button button-outlint button-block button-positive" href="#/commentatorlist">花名册</a>
-		<a class="button button-outlint button-block button-positive" href="#/tasklist">历史任务</a>
-		<a class="button button-outlint button-block button-positive">数据报表</a>
-		<a class="button button-outlint button-block button-positive" href="#/createrole">新建角色</a>
-		<a class="button button-outlint button-block button-positive" href="#/commentator">我的网评</a>
-		<a class="button button-outlint button-block button-positive">权限管理</a>
-
+	<ion-content scroll="false">
+		<div class="personalinfobg">
+			<div class="leftbutton">
+				<a class="button button-clear button-dark icon ion-android-settings" href="#/setting"></a>
+			</div>
+			<div class="rightbutton">
+				<a class="button button-clear button-dark icon ion-chatbubbles" href="#/notification"></a>
+			</div>
+			<!-- <a class="button button-clear button-dark icon ion-chatbubbles" href="#/notification"></a>
+			<img class="avatar" src="img/ben.png"> -->
+			<a href="#/personalinfo" style="text-decoration:none;color:black;font-size:20px">
+		      	<img class="avatar" src="img/ben.png">
+		      	<p>Venkman</p>
+		    </a>
+		    <div style="color:black;font-size:15px">
+		    	<p>任务总量:500/800({{500/800}})</p>
+		    </div>
+		    <div style="color:black;font-size:15px">
+		    	<p>今日任务:7/20({{7/20}})</p>
+		    </div>
+		</div>
+		<ion-content scroll="true" scroll-bar = "false" class="operationarea">
+			<div class="row">
+				<div class="col col-25">
+					<a class="button button-positive operationblock" href="#/releasetask">
+						<i class="icon ion-ios-compose-outline"></i>
+						<p>发布任务</p>
+					</a>
+				</div>
+				<div class="col col-25">
+					<a class="button button-positive operationblock" href="#/commentatorlist">
+						<i class="icon ion-ios-person-outline"></i>
+						<p>花名册</p>
+					</a>
+				</div>
+				<div class="col col-25">
+					<a class="button button-positive operationblock" href="#/tasklist">
+						<i class="icon ion-ios-paper-outline"></i>
+						<p>历史任务</p>
+					</a>
+				</div>
+				<div class="col col-25">
+					<a class="button button-positive operationblock">
+						<i class="icon ion-ios-speedometer-outline"></i>
+						<p>数据报表</p>
+					</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col col-25">
+					<a class="button button-positive operationblock" href="#/createrole">
+						<i class="icon ion-ios-personadd-outline"></i>
+						<p>新建角色</p>
+					</a>
+				</div>
+				<div class="col col-25">
+					<a class="button button-positive operationblock" href="#/commentator">
+						<i class="icon ion-ios-world-outline"></i>
+						<p>我的网评</p>
+					</a>
+				</div>
+				<div class="col col-25">
+					<a class="button button-positive operationblock">
+						<i class="icon ion-ios-locked-outline"></i>
+						<p>权限管理</p>
+					</a>
+				</div>
+				<div class="col col-25">
+					<a class="button button-positive operationblock">
+						<i class="icon ion-android-add"></i>
+						<p> </p>
+					</a>
+				</div>
+			</div>
+		</ion-content>
 		
 	</ion-content>
 </ion-view>
+<style type="text/css">
+	ion-content .personalinfobg{
+		/*background-image:url(img/adminbg.JPG);*/
+		background-color:#00bbdd;
+		width: 100%;
+		height: 190px;
+		text-align:center;
+	}
+	.personalinfobg .leftbutton {
+		position: absolute;
+		top:5px;
+		left: 5px;
+	}
+	.personalinfobg .rightbutton {
+		position: absolute;
+		top:5px;
+		right: 5px;
+	}
+	.avatar{
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		max-width: 60px;
+		max-height: 60px;
+	}
+	.personalinfobg .avatar{
+		margin-top: 35px;
+	}
+	.operationarea{
+		margin-top:190px;
+		/*border:solid;
+		border-width:5px;
+		border-color:red;*/
+	}
+	.operationblock{
+		width: 100%;
+		height: 100%;
+	}
+	.operationblock p{
+		font-size: 10px;
+		width:100%;
+		margin-top: -15px;
+		margin-bottom: 0px;
+	}
+</style>

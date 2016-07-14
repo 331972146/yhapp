@@ -119,6 +119,11 @@ angular.module('yhapp', ['ionic', 'yhapp.controllers', 'yhapp.services'])
       templateUrl: 'templates/security.html',
       controller:"securityCtrl"
     })
+    .state('changepassword', {
+      url: '/changepassword',
+      templateUrl: 'templates/changepassword.html',
+      controller:"changepasswordCtrl"
+    })
     .state('feedback', {
       url: '/feedback',
       templateUrl: 'templates/feedback.html',
